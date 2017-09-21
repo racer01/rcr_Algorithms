@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Algorithms
@@ -86,7 +87,10 @@ namespace Algorithms
 
         public string ReverseString(string word)
         {
-            return new string(word.ToCharArray().Reverse().ToArray());
+            StringBuilder sb = new StringBuilder(word.Length);
+            foreach (char c in word)
+                sb.Insert(0, c);
+            return sb.ToString();
         }
 
         public string Rot13(string word)
